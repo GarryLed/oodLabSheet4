@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:oodLabSheet4"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         <!-- Css styling-->
+         <!-- Css styling for labels-->
         <Style TargetType="Label">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Background" Value="Gray"/>

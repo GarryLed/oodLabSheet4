@@ -20,9 +20,34 @@ namespace oodLabSheet4
     /// </summary>
     public partial class MainWindow : Window
     {
+        NORTHWNDEntities db = new NORTHWNDEntities();
         public MainWindow()
         {
             InitializeComponent();
+
         }
-    }
+
+        // private main window loaded method 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            // populate the stock level listbox upon startup 
+            lbxStock.ItemsSource = Enum.GetNames(typeof(StockLevel));
+
+            // populate the suppliers listbox 
+            var query1 = from s in db.Suppliers
+                         orderby s.CompanyName
+                         select new
+                         {
+                             SupplierName = s.CompanyName,
+                             SupplierID = s.SupplierID,
+                             Country = s.Country
+                         };
+
+            lbxSuppliers.ItemsSource = query1.ToList();
+            
+        }
+    } 
+    // enum for stocklevel (for populating the stock level listbox) 
+    public enum StockLevel { Low, Normal, Overstocked };
 }
