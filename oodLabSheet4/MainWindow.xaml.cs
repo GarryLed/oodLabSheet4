@@ -89,18 +89,39 @@ namespace oodLabSheet4
                     break;
 
             }
+
+            // updating the projects list UI 
+            lbxProducts.ItemsSource = query.ToList();
         }
 
         // selection changed for lbx suppliers 
         private void lbxSuppliers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // selected value path 
+            int supplierID = Convert.ToInt32(lbxSuppliers.SelectedValue); // selected value path (gets the supplier id when value is clicked in UI) 
+
+            var query = from p in db.Products
+                        where p.SupplierID == supplierID
+                        orderby p.ProductName
+                        select p.ProductName;
+
+            // update product list 
+            lbxProducts.ItemsSource = query.ToList();
 
         }
 
         // selection changed for lbx countries 
         private void lbxCountries_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            string country = (string)(lbxCountries.SelectedValue);
 
+            var query = from p in db.Products
+                        where p.Supplier.Country == country
+                        orderby p.ProductName
+                        select p.ProductName;
+
+            // update product list UI 
+            lbxProducts.ItemsSource = query.ToList();
         }
     }
     // enum for stocklevel (for populating the stock level listbox) 
