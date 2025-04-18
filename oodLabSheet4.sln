@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oodLabSheet4", "oodLabSheet4\oodLabSheet4.csproj", "{40EDBA5E-7BDB-48D3-AD45-9A72F3B6FD1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise2-AdventureWorks", "Exercise2-AdventureWorks\Exercise2-AdventureWorks.csproj", "{D1500B75-96EA-48D9-8106-396425C635F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{40EDBA5E-7BDB-48D3-AD45-9A72F3B6FD1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40EDBA5E-7BDB-48D3-AD45-9A72F3B6FD1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40EDBA5E-7BDB-48D3-AD45-9A72F3B6FD1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1500B75-96EA-48D9-8106-396425C635F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1500B75-96EA-48D9-8106-396425C635F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1500B75-96EA-48D9-8106-396425C635F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1500B75-96EA-48D9-8106-396425C635F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
