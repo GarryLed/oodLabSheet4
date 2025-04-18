@@ -20,6 +20,7 @@ namespace Exercise2_AdventureWorks
     /// </summary>
     public partial class MainWindow : Window
     {
+        // connecting to database 
         public MainWindow()
         {
             InitializeComponent();

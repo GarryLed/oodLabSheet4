@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:Exercise2_AdventureWorks"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+         <!-- Styling-->
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Gray"/>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
     </Application.Resources>
 </Application>
