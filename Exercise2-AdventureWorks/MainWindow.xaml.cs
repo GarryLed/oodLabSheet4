@@ -21,14 +21,43 @@ namespace Exercise2_AdventureWorks
     public partial class MainWindow : Window
     {
         // connecting to database 
+        AdventureLiteEntities db = new AdventureLiteEntities();
+
         public MainWindow()
         {
             InitializeComponent();
+            this.Loaded += Window_Loaded;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            // LINQ display customers who have placed orders 
+            var query = from o in db.SalesOrderHeaders
+                        orderby o.Customer.CompanyName
+                        select o.Customer.CompanyName;
+
+            var result = query.ToList();
+
+            lbxCustomers.ItemsSource = result.Distinct(); 
+
+
         }
 
         private void lbxCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            string customer = lbxCustomers.SelectedItem as string; // returns the company name of a customer 
 
+            if (customer != null)
+            {
+                // LINQ 
+                var query = from o in db.SalesOrderHeaders
+                            where o.Customer.CompanyName == customer
+                            select o;
+
+                var result = query.ToList();
+
+                lbxOrders.ItemsSource = result;
+            }
         }
 
         private void lbxOrders_SelectionChanged(object sender, SelectionChangedEventArgs e)
